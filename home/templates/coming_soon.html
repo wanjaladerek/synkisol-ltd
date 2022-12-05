@@ -1,0 +1,146 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>Coming Soon - Synkisol | Nairobi Commercial Kitchen Equipment</title>
+    <!-- Stylesheets -->
+    <link rel="preconnect" href="https://fonts.gstatic.com/">
+    <link
+        href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&amp;family=Teko:wght@300;400;500;600;700&amp;display=swap"
+        rel="stylesheet">
+    
+    {% load compress %}
+
+    {% compress css %}
+    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet">
+    <link href="{% static 'css/owl.css' %}" rel="stylesheet">
+    <link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
+    <link href="{% static 'css/animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jquery-ui.css' %}" rel="stylesheet">
+    <link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+    <link href="{% static 'css/hover.css' %}" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/jarallax.css' %}">
+    <link href="{% static 'css/custom-animate.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <!-- rtl css -->
+    <link href="{% static 'css/rtl.css' %}" rel="stylesheet">
+    <!-- Responsive File -->
+    <link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+    <!-- Color css -->
+    <link rel="stylesheet" id="jssDefault" href="{% static 'css/colors/color-default.css' %}">
+    {% endcompress %}
+
+    <!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}" />
+	<link rel="apple-touch-icon" sizes="57x57" href="{% static 'images/apple-touch-icon-57x57.png' %}" />
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}" />
+	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/apple-touch-icon-76x76.png' %}" />
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}" />
+	<link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/apple-touch-icon-120x120.png' %}" />
+	<link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/apple-touch-icon-144x144.png' %}" />
+	<link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/apple-touch-icon-152x152.png' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon-180x180.png' %}" />
+
+    <!-- Responsive Settings -->
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+    <!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+</head>
+
+<body>
+
+    <div class="page-wrapper">
+
+        <!-- style switcher -->
+		<div class="style-switcher">
+			<a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
+			<div class="language-feature">
+				<button class="ltr-switcher" data-href="#googtrans(en|en)">LTR</button><!-- /.ltr-switcher -->
+				<button class="rtl-switcher" data-href="#googtrans(en|ar)">RTL</button><!-- /.rtl-switcher -->
+			</div><!-- /.language-feature -->
+			<div class="layout-feature">
+				<a href="#" class="dark-switcher">Dark</a>
+				<button class="boxed-switcher">Boxed</button><!-- /.ltr-switcher -->
+			</div><!-- /.language-feature -->
+		</div>
+		<!-- Preloader -->
+		<div class="preloader">
+			<div class="icon" style="background-image: url({% static 'images/update-01-10-2021/synkisol-emblem.png' %});"></div>
+		</div>
+
+        <section class="coming-soon"
+            style="background-image: url({% static 'images/update-26-01-2021/background/coming-soon-bg-1.jpg' %});">
+            <div class="auto-container">
+                <div class="row">
+                    <div class="col-lg-7">
+                        <div class="logo-box">
+                            <div class="logo"><a href="{% url 'home:home' %}" title="Synkisol Synergy Solutions Limited"><img
+                                        src="{% static 'images/update-01-10-2021/synkisol-logo.png' %}" id="thm-logo" alt="Synkisol Synergy Solutions Limited Logo"
+                                        height="50px" width="300px" title="Synkisol Synergy Solutions Limited"></a></div>
+                        </div>
+                        <h3 class="coming-soon__title">Coming Back Soon!</h3><!-- /.coming-soon__title -->
+                        <p class="coming-soon__text">We have taken this time to work on our website so as to continue serving youo better. Please bear with us. </p><!-- /.coming-soon__text -->
+                        <ul class="countdown-one__list coming-soon__countdown list-unstyled" data-leading-zeros="true"
+                            data-enable-days="true" data-deadline-date="dynamicDate">
+                            <!-- loading via js -->
+                        </ul><!-- /.countdown-one__list list-unstyled -->
+                        {% comment %} <h3 class="coming-soon__form-title">Newsletter</h3><!-- /.coming-soon__form-title -->
+                        <p class="coming-soon__form-text">Sign up for our latest news & articles.</p>
+                        <!-- /.coming-soon__text -->
+                        <form action="#" class="coming-soon__form">
+                            <input type="text" placeholder="Email Address" />
+                            <button type="submit"><span class="fa fa-envelope"></span></button>
+                        </form> {% endcomment %}
+                        <ul class="coming-soon__social list-unstyled">
+                            <li><a href="https://www.facebook.com/synkisol" target="_blank"><span class="fab fa-facebook-square"></span></a></li>
+                            <li><a href="https://www.twitter.com/synkisol" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                            <li><a href="https://www.instagram.com/synkisol" target="_blank"><span class="fab fa-instagram"></span></a></li>
+                            <li><a href="https://www.linkedin.com/synkisol" target="_blank"><span class="fab fa-linkedin"></span></a></li>
+                        </ul><!-- /.coming-soon__social -->
+                    </div><!-- /.col-lg-7 -->
+                </div><!-- /.row -->
+            </div><!-- /.container -->
+        </section><!-- /.coming-soon -->
+
+
+
+
+
+
+    </div>
+    <!--End pagewrapper-->
+
+    <a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+    {% compress js %}
+    <script src="{% static 'js/jquery.js' %}"></script>
+    <script src="{% static 'js/popper.min.js' %}"></script>
+    <script src="{% static 'js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'js/TweenMax.js' %}"></script>
+    <script src="{% static 'js/jquery-ui.js' %}"></script>
+    <script src="{% static 'js/jquery.fancybox.js' %}"></script>
+    <script src="{% static 'js/owl.js' %}"></script>
+    <script src="{% static 'js/mixitup.js' %}"></script>
+    <script src="{% static 'js/appear.js' %}"></script>
+    <script src="{% static 'js/wow.js' %}"></script>
+    <script src="{% static 'js/jQuery.style.switcher.min.js' %}"></script>
+    {% comment %} <script type="text/javascript" src="../../cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js">
+    </script> {% endcomment %}
+    <script src="{% static 'js/jquery.easing.min.js' %}"></script>
+    <script src="{% static 'js/jarallax.min.js' %}"></script>
+    <script src="{% static 'js/countdown.js' %}"></script>
+    <script src="{% static 'js/custom-script.js' %}"></script>
+
+    <script src="{% static 'js/lang.js' %}"></script>
+    {% comment %} <script src="../../translate.google.com/translate_a/elementa0d8.js?cb=googleTranslateElementInit"></script> {% endcomment %}
+    <script src="{% static 'js/color-switcher.js' %}"></script>
+    {% endcompress %}
+</body>
+
+</html>

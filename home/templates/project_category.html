@@ -1,0 +1,85 @@
+{% extends 'base.html' %}
+
+<!-- HTML Meta Tags -->
+{% block head %}
+
+<title>{% block title %} {{ project_category.title }} {% endblock %} | Synkisol</title>
+<meta name="description" content="Commercial Kitchen Equipment, Restaurant Kitchen Layouts, Stainless Steel Fabrication in Kenya. Commercial Kitchen Equipment for sale in Nairobi or around you">
+<meta name="keywords" content="Kitchen Suppliers in Kenya, Commercial Kitchen in Kenya, Stainless Steel Fabrication in Kenya, Commercial Kitchen Equipment for sale in Nairobi or around you" />
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://www.synkisol.co.ke/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% block og:title %} {{ project_category.title }} {% endblock %} | Synkisol">
+<meta property="og:description" content="Commercial Kitchen Equipment, Restaurant Kitchen Layouts, Stainless Steel Fabrication in Kenya. Commercial Kitchen Equipment for sale in Nairobi or around you">
+<meta property="og:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="synkisol.co.ke">
+<meta property="twitter:url" content="https://www.synkisol.co.ke/">
+<meta name="twitter:title" content="{% block twitter:title %} {{ project_category.title }} {% endblock %} | Synkisol">
+<meta name="twitter:description" content="Commercial Kitchen Equipment, Restaurant Kitchen Layouts, Stainless Steel Fabrication in Kenya. Commercial Kitchen Equipment for sale in Nairobi or around you">
+<meta name="twitter:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- Banner Section -->
+<section class="page-banner">
+    <div class="image-layer" style="background-image:url({% static 'images/background/image-7.jpg' %});"></div>
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+    <div class="banner-inner">
+        <div class="auto-container">
+            <div class="inner-container clearfix">
+                <h1>{{ project_category.title }}</h1>
+                <div class="page-nav">
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="{% url 'home:home' %}">Home</a></li>
+                        <li class="active">{{ project_category.title }}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Banner Section -->
+
+<!-- Gallery Section -->
+<section class="gallery-section">
+    <div class="auto-container">
+        <!--MixitUp Galery-->
+        <div class="mixitup-gallery">
+           
+            <div class="filter-list row">
+                <!-- Gallery Item -->
+                {% for rs in projects %}
+                <div class="col-sm-12 col-md-6 col-lg-4">
+                    <div class="gallery-item-three">
+                        <img src="{{ rs.short_image.url }}" width="370px" height="416px" alt="{{ rs.short_alt }}">
+                        <div class="gallery-item-three__content">
+                            <p>{{ rs.project_category }}</p>
+                            <h3><a href="{{ rs.get_absolute_url }}">{{ rs.title }}</a></h3>
+                        </div><!-- /.gallery-item-three__content -->
+                    </div><!-- /.gallery-item-three -->
+                </div><!-- /.col-sm-12 col-md-6 col-lg-4 -->
+                {% endfor %}
+            </div>
+            {% comment %} <div class="more-box">
+                <a class="theme-btn btn-style-one" href="#">
+                    <i class="btn-curve"></i>
+                    <span class="btn-title">Load more work</span>
+                </a>
+            </div> {% endcomment %}
+        </div>
+
+    </div>
+</section>
+
+{% endblock %}

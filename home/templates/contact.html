@@ -1,0 +1,162 @@
+{% extends 'base.html' %}
+
+<!-- HTML Meta Tags -->
+{% block head %}
+
+<title>{% block title %} Contact {% endblock %} | Synkisol</title>
+<meta name="description" content="Synkisol Limited is an expert hospitality industry based in Nairobi. Contact us for hospitality solutions and expert commercial kitchen services">
+<meta name="keywords" content="Kitchen Suppliers in Kenya, Commercial Kitchen in Kenya, Stainless Steel Fabrication in Kenya, Commercial Kitchen Equipment for sale in Nairobi or around you" />
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://www.synkisol.co.ke/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% block og:title %} Contact {% endblock %} | Synkisol">
+<meta property="og:description" content="Synkisol Limited is an expert hospitality industry based in Nairobi. Contact us for hospitality solutions and expert commercial kitchen services">
+<meta property="og:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="synkisol.co.ke">
+<meta property="twitter:url" content="https://www.synkisol.co.ke/">
+<meta name="twitter:title" content="{% block twitter:title %} Contact {% endblock %} | Synkisol">
+<meta name="twitter:description" content="Synkisol Limited is an expert hospitality industry based in Nairobi. Contact us for hospitality solutions and expert commercial kitchen services">
+<meta name="twitter:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- Banner Section -->
+<section class="page-banner">
+    <div class="image-layer" style="background-image:url({% static 'images/background/image-7.jpg' %});"></div>
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+    <div class="banner-inner">
+        <div class="auto-container">
+            <div class="inner-container clearfix">
+                <h1>Contact</h1>
+                <div class="page-nav">
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="{% url 'home:home' %}">Home</a></li>
+                        <li class="active">Contact</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Banner Section -->
+
+<!--Contact Section-->
+<section class="contact-section contact-two">
+    <div class="auto-container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="contact-two__content">
+                    <div class="sec-title">
+                        <h2>We&#39;d Love to Hear From You<span class="dot">.</span></h2>
+                    </div>
+                    <p class="contact-two__text">Whether you&#39;re curious about services, or even our products—we&#39;re ready to answer any and all questions.</p>
+                    <!-- /.contact-two__text -->
+                    <div class="contact-two__social">
+                        <a href="https://www.twitter.com/synkisol" target="_blank" class="fab fa-twitter"></a>
+                        <a href="https://www.facebook.com/synkisol" target="_blank" class="fab fa-facebook"></a>
+                        <a href="https://www.linkedin.com/synkisol" target="_blank" class="fab fa-linkedin"></a>
+                        <a href="https://www.instagram.com/synkisol" target="_blank" class="fab fa-instagram"></a>
+                    </div><!-- /.contact-two__social -->
+                </div><!-- /.contact-two__content -->
+            </div><!-- /.col-lg-4 -->
+            <div class="col-lg-8">
+                <div class="form-box">
+                    <div class="default-form">
+                        <form method="POST">
+                            {% csrf_token %}
+                            <div class="row clearfix">
+                            {% if messages %}
+                                {% for message in messages %}
+                                    <div class="alert alert-{{message.tags}}" role="alert">
+                                        {{ message }}
+                                    </div>
+                                {% endfor %}
+                            {% endif %}
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                    <div class="field-inner">
+                                        <input type="text" name="full_name" value="" placeholder="First Name &#38; Surname" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                    <div class="field-inner">
+                                        <input type="email" name="email" value="" placeholder="Email Address"
+                                            required="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                    <div class="field-inner">
+                                        <input type="text" name="phone" value="" placeholder="Phone Number" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-6 col-md-6 col-sm-12">
+                                    <div class="field-inner">
+                                        <input type="text" name="subject" value="" placeholder="Subject" required="">
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                    <div class="field-inner">
+                                        <textarea name="message" placeholder="Write Message" required=""></textarea>
+                                    </div>
+                                </div>
+                                <div class="form-group col-lg-12 col-md-12 col-sm-12">
+                                    <button class="theme-btn btn-style-one">
+                                        <i class="btn-curve"></i>
+                                        <span class="btn-title">Send message</span>
+                                    </button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div><!-- /.col-lg-8 -->
+        </div><!-- /.row -->
+
+    </div>
+</section>
+
+
+<section class="contact-info-two">
+    <div class="auto-container">
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="contact-info-two__card wow fadeInUp" data-wow-duration="1500ms">
+                    <i class="fa fa-map-marker-alt"></i>
+                    <a href="#">Shem Plaza, Next To D. T Dobie, Lusaka Road, Nairobi, Kenya</a>
+                </div><!-- /.contact-info-two__card -->
+            </div><!-- /.col-md-12 col-lg-4 -->
+            <div class="col-md-12 col-lg-4">
+                <div class="contact-info-two__card wow fadeInUp" data-wow-duration="1500ms"
+                    data-wow-delay="300ms">
+                    <i class="fa fa-envelope"></i>
+                    <a href="mailto:info@synkisol.co.ke">info@synkisol.co.ke</a>
+                </div><!-- /.contact-info-two__card -->
+            </div><!-- /.col-md-12 col-lg-4 -->
+            <div class="col-md-12 col-lg-4">
+                <div class="contact-info-two__card wow fadeInUp" data-wow-delay="600ms"
+                    data-wow-duration="1500ms">
+                    <i class="fa fa-phone"></i>
+                    <a href="tel:+254718258028">+254 718 258 028</a>
+                </div><!-- /.contact-info-two__card -->
+            </div><!-- /.col-md-12 col-lg-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.auto-container -->
+</section><!-- /.contact-info-two -->
+
+<div class="map-box">
+    <iframe class="map-iframe"
+        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d3988.796479743484!2d36.8365911!3d-1.2967669!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x182f118d6a6f6d2f%3A0xd96831d55fab2aef!2sShem%20Plaza!5e0!3m2!1ssw!2ske!4v1662519500463!5m2!1ssw!2ske"
+        style="border:0;" aria-hidden="false" tabindex="0"></iframe>
+</div>
+
+{% endblock %}

@@ -1,0 +1,540 @@
+{% extends 'base.html' %}
+
+<!-- HTML Meta Tags -->
+{% block head %}
+
+<title>{% block title %} Synkisol {% endblock %} | Nairobi Commercial Kitchen Equipment</title>
+<meta name="description" content="Commercial Kitchen Equipment, Restaurant Kitchen Layouts, Stainless Steel Fabrication in Kenya. Commercial Kitchen Equipment for sale in Nairobi or around you">
+<meta name="keywords" content="Kitchen Suppliers in Kenya, Commercial Kitchen in Kenya, Stainless Steel Fabrication in Kenya, Commercial Kitchen Equipment for sale in Nairobi or around you" />
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://www.synkisol.co.ke/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% block og:title %} Synkisol | Home {% endblock %} | Nairobi Commercial Kitchen Equipment">
+<meta property="og:description" content="Commercial Kitchen Equipment, Restaurant Kitchen Layouts, Stainless Steel Fabrication in Kenya. Commercial Kitchen Equipment for sale in Nairobi or around you">
+<meta property="og:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="synkisol.co.ke">
+<meta property="twitter:url" content="https://www.synkisol.co.ke/">
+<meta name="twitter:title" content="{% block twitter:title %} Synkisol | Home {% endblock %} | Nairobi Commercial Kitchen Equipment">
+<meta name="twitter:description" content="Commercial Kitchen Equipment, Restaurant Kitchen Layouts, Stainless Steel Fabrication in Kenya. Commercial Kitchen Equipment for sale in Nairobi or around you">
+<meta name="twitter:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<section class="slider-eight">
+    <div class="swiper-container thm-swiper__slider"
+        data-swiper-options='{"slidesPerView": 1, "loop": true, "effect": "fade", "pagination": { "el": "#main-slider-pagination", "type": "bullets", "clickable": true }, "autoplay": { "delay": 5000 }}'>
+        <div class="swiper-wrapper">
+            {% for rs in slider %}
+            <div class="swiper-slide">
+                <div class="image-layer"
+                    style="background-image: url({{ rs.image.url }});">
+                </div>
+                <!-- /.image-layer -->
+                <div class="auto-container">
+                    <div class="slider-eight__content">
+                        <p class="slider-eight__text"><span>Synkisol Limited</span></p>
+                        <!-- /.slider-eight__text -->
+                        <h2 class="slider-eight__title">{{ rs.hero_text }}</h2>
+                        <!-- /.slider-eight__title -->
+                        <div class="slider-eight__btns">
+                            {% comment %} <a href="#" class="slider-eight__btn thm-btn__eight">Case Studies</a> {% endcomment %}
+                            <!-- /.thm-btn__eight -->
+                            <a href="{% url 'contact' %}" class="slider-eight__btn slider-eight__btn--two thm-btn__eight">Book A Free Consultation</a>
+                            <!-- /.thm-btn__eight -->
+                        </div><!-- /.slider-eight__btns -->
+
+                    </div><!-- /.slider-eight__content -->
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
+    </div>
+</section><!-- /.slider-six -->
+
+<!-- Funfacts Section -->
+<section class="facts-section alternate">
+    <div class="auto-container">
+        <div class="inner-container">
+
+            <!-- Fact Counter -->
+            <div class="fact-counter">
+                <div class="row clearfix">
+
+                    <!--Column-->
+                    <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner">
+                            <div class="content">
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="4000" data-stop="23">0</span>
+                                </div>
+                                <div class="counter-title">Projects Completed</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Column-->
+                    <div class="column counter-column col-lg-6 col-md-6 col-sm-12">
+                        <div class="inner">
+                            <div class="content">
+                                <div class="count-outer count-box alternate">
+                                    <span class="count-text" data-speed="3000" data-stop="80">0</span>
+                                </div>
+                                <div class="counter-title">Active clients</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    {% comment %} <!--Column-->
+                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner">
+                            <div class="content">
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="3000" data-stop="626">0</span>
+                                </div>
+                                <div class="counter-title">cups of coffee</div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Column-->
+                    <div class="column counter-column col-lg-3 col-md-6 col-sm-12">
+                        <div class="inner">
+                            <div class="content">
+                                <div class="count-outer count-box">
+                                    <span class="count-text" data-speed="4000" data-stop="9704">0</span>
+                                </div>
+                                <div class="counter-title">happy clients</div>
+                            </div>
+                        </div>
+                    </div> {% endcomment %}
+
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+<!-- End Funfacts Section -->
+
+<!-- about section -->
+<section class="about-section-three">
+    <div class="auto-container">
+        <div class="row">
+            {% for rs in about %}
+            <div class="col-md-12 col-lg-6">
+                <div class="about-section-three__image">
+                    <img src="{{ rs.short_image.url }}" width="500px" height="666px" alt="{{ rs.short_alt }}">
+                </div><!-- /.about-section-three__image -->
+            </div><!-- /.col-md-12 -->
+            <div class="col-md-12 col-lg-6">
+                <div class="about-section-three__content">
+                    <div class="sec-title-two text-left">
+                        <p>Welcome to Synkisol Limited</p>
+                        <h2>{{ rs.title }}</h2>
+                    </div><!-- /.sec-title-two -->
+                    <div class="about-section-three__summery">
+                        <p>{{ rs.short_detail }}</p>
+                    </div><!-- /.about-section-three__summery -->
+                    <div class="about-section-three__name">
+                        <!-- <img src="images/update-1-12-2020/resources/signture-1-1.png" alt=""> -->
+                        <h3>Ronnie Ochieng</h3>
+                        <p>Founder</p>
+                    </div><!-- /.about-section-three__name -->
+                </div><!-- /.about-section-three__content -->
+            </div><!-- /.col-md-12 col-lg-6 -->
+            {% endfor %}
+        </div><!-- /.row -->
+    </div><!-- /.auto-container -->
+</section><!-- /.about-section-three -->
+
+<section class="service-six">
+    <div class="service-six__curv">
+        <svg version="1.1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1920 122">
+            <path fill="currentColor"
+                d="M0,122.005S80.814,20.129,283.871,2.426C526.255-18.706,550.388,91.2,792.025,102.115c243.565,11.006,299.815-108,520.765-97.662,220.1,10.3,273.86,88.036,415.09,98.26C1878.57,113.62,1920,51.068,1920,51.068V-862.995H0v985Z" />
+        </svg>
+    </div><!-- /.service-six__curv -->
+
+    <div class="auto-container">
+        <div class="sec-title-six text-center">
+            <p class="sec-title-six__text"><span>Checkout Our Services</span></p>
+            <!-- /.sec-title-six__text -->
+            <h2 class="sec-title-six__title">What we&#39;re offering</h2>
+            <!-- /.sec-title-six__title -->
+        </div><!-- /.sec-title-six -->
+        <div class="row">
+            {% for rs in service %}
+            <div class="col-sm-12 col-md-12 col-lg-4 wow fadeInUp" data-wow-duration="1500ms">
+                <div class="service-six__item">
+                    <div class="service-six__image">
+                        <img src="{{ rs.short_image.url }}" width="370px" height="316px" alt="{{ rs.short_alt }}">
+                    </div><!-- /.service-six__image -->
+                    <div class="service-six__content">
+                        <!-- <div class="service-six__icon">
+                            <i class="flaticon-mobile-analytics"></i>
+                        </div>/.service-six__icon -->
+                        <h3 class="service-six__title"><a href="{{ rs.get_absolute_url }}">{{ rs.title }}</a></h3>
+                        <!-- /.service-six__title -->
+                        <div class="service-six__text">{{ rs.short_detail }}</div><!-- /.service-six__text -->
+                    </div><!-- /.service-six__content -->
+                </div><!-- /.service-six__item -->
+            </div><!-- /.col-sm-12 col-md-12 col-lg-4 -->
+            {% endfor %}
+        </div><!-- /.row -->
+    </div><!-- /.auto-container -->
+</section><!-- /.service-six -->
+
+   <!-- gallery section -->
+<section class="gallery-block-three">
+    <div class="auto-container">
+        <div class="sec-title-two text-center">
+            <p>What We did</p>
+            <h2>Latest Projects</h2>
+        </div><!-- /.sec-title-two -->
+        <div class="row">
+            {% for rs in projects %}
+            <div class="col-sm-12 col-md-6 col-lg-4">
+                <div class="gallery-item-three">
+                    <img src="{{ rs.short_image.url }}" width="370px" height="416px" alt="{{ rs.short_alt }}">
+                    <div class="gallery-item-three__content">
+                        <p>{{ rs.project_category }}</p>
+                        <h3><a href="{{ rs.get_absolute_url }}">{{ rs.title }}</a></h3>
+                    </div><!-- /.gallery-item-three__content -->
+                </div><!-- /.gallery-item-three -->
+            </div><!-- /.col-sm-12 col-md-6 col-lg-4 -->
+            {% endfor %}
+        </div><!-- /.row -->
+    </div><!-- /.auto-container -->
+</section><!-- /.gallery-block-three -->
+
+<!--Testimonials Section-->
+<section class="faqs-section">
+    <div class="auto-container">
+        <div class="sec-title-two text-center">
+            <h2>Frequently Asked Questions</h2>
+        </div><!-- /.sec-title-two -->
+        <div class="row clearfix">
+            {% for rs in faq %}
+            <div class="faq-block col-lg-6 col-md-12 col-sm-12">
+                <ul class="accordion-box clearfix">
+                    <!--Block-->
+                    <li class="accordion block active-block">
+                        <div class="acc-btn active"><span class="count">{{ rs.question_number }}</span>{{ rs.question }}</div>
+                        <div class="acc-content current">
+                            <div class="content">
+                                <div class="text">{{ rs.answer }}</div>
+                            </div>
+                        </div>
+                    </li>
+
+                </ul>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+{% comment %} <section class="testimonials-four">
+    <div class="auto-container">
+        <div class="testimonials-four__block__top">
+            <div class="sec-title">
+                <h2>What our customers are
+                    talking about<span class="dot">.</span></h2>
+            </div>
+
+            <div class="block-text">
+                <p>There are many variations of passages of Lorem Ipsum available,
+                    but the majority have suffered alteration in some form, by injected
+                    humour, or randomised.</p>
+            </div>
+        </div><!-- /.testimonials-four__block__top -->
+        <div class="testimonials-four-carousel owl-carousel owl-theme">
+            <div class="item">
+                <div class="testimonials-four-card">
+                    <div class="testimonials-four-card__content">
+                        <p>There are many variations of passages of lorem ipsum available but the
+                            majority have suffered alteration in some form, by injected humour,</p>
+                        <div class="name">Sarah albert</div>
+                        <div class="designation">Director</div>
+                    </div><!-- /.testimonials-four-card__content -->
+                    <div class="image">
+                        <img src="images/resource/author-1.jpg" alt="">
+                    </div>
+                </div><!-- /.testimonials-four-card -->
+            </div>
+            <div class="item">
+                <div class="testimonials-four-card">
+                    <div class="testimonials-four-card__content">
+                        <p>There are many variations of passages of lorem ipsum available but the
+                            majority have suffered alteration in some form, by injected humour,</p>
+                        <div class="name">Mike hardson</div>
+                        <div class="designation">Director</div>
+                    </div><!-- /.testimonials-four-card__content -->
+                    <div class="image">
+                        <img src="images/resource/author-2.jpg" alt="">
+                    </div>
+                </div><!-- /.testimonials-four-card -->
+            </div>
+            <div class="item">
+                <div class="testimonials-four-card">
+                    <div class="testimonials-four-card__content">
+                        <p>There are many variations of passages of lorem ipsum available but the
+                            majority have suffered alteration in some form, by injected humour,</p>
+                        <div class="name">Shirley Smith</div>
+                        <div class="designation">Director</div>
+                    </div><!-- /.testimonials-four-card__content -->
+                    <div class="image">
+                        <img src="images/resource/author-3.jpg" alt="">
+                    </div>
+                </div><!-- /.testimonials-four-card -->
+            </div>
+            <div class="item">
+                <div class="testimonials-four-card">
+                    <div class="testimonials-four-card__content">
+                        <p>There are many variations of passages of lorem ipsum available but the
+                            majority have suffered alteration in some form, by injected humour,</p>
+                        <div class="name">Sarah albert</div>
+                        <div class="designation">Director</div>
+                    </div><!-- /.testimonials-four-card__content -->
+                    <div class="image">
+                        <img src="images/resource/author-1.jpg" alt="">
+                    </div>
+                </div><!-- /.testimonials-four-card -->
+            </div>
+            <div class="item">
+                <div class="testimonials-four-card">
+                    <div class="testimonials-four-card__content">
+                        <p>There are many variations of passages of lorem ipsum available but the
+                            majority have suffered alteration in some form, by injected humour,</p>
+                        <div class="name">Mike hardson</div>
+                        <div class="designation">Director</div>
+                    </div><!-- /.testimonials-four-card__content -->
+                    <div class="image">
+                        <img src="images/resource/author-2.jpg" alt="">
+                    </div>
+                </div><!-- /.testimonials-four-card -->
+            </div>
+            <div class="item">
+                <div class="testimonials-four-card">
+                    <div class="testimonials-four-card__content">
+                        <p>There are many variations of passages of lorem ipsum available but the
+                            majority have suffered alteration in some form, by injected humour,</p>
+                        <div class="name">Shirley Smith</div>
+                        <div class="designation">Director</div>
+                    </div><!-- /.testimonials-four-card__content -->
+                    <div class="image">
+                        <img src="images/resource/author-3.jpg" alt="">
+                    </div>
+                </div><!-- /.testimonials-four-card -->
+            </div>
+            <div class="item">
+                <div class="testimonials-four-card">
+                    <div class="testimonials-four-card__content">
+                        <p>There are many variations of passages of lorem ipsum available but the
+                            majority have suffered alteration in some form, by injected humour,</p>
+                        <div class="name">Sarah albert</div>
+                        <div class="designation">Director</div>
+                    </div><!-- /.testimonials-four-card__content -->
+                    <div class="image">
+                        <img src="images/resource/author-1.jpg" alt="">
+                    </div>
+                </div><!-- /.testimonials-four-card -->
+            </div>
+            <div class="item">
+                <div class="testimonials-four-card">
+                    <div class="testimonials-four-card__content">
+                        <p>There are many variations of passages of lorem ipsum available but the
+                            majority have suffered alteration in some form, by injected humour,</p>
+                        <div class="name">Mike hardson</div>
+                        <div class="designation">Director</div>
+                    </div><!-- /.testimonials-four-card__content -->
+                    <div class="image">
+                        <img src="images/resource/author-2.jpg" alt="">
+                    </div>
+                </div><!-- /.testimonials-four-card -->
+            </div>
+            <div class="item">
+                <div class="testimonials-four-card">
+                    <div class="testimonials-four-card__content">
+                        <p>There are many variations of passages of lorem ipsum available but the
+                            majority have suffered alteration in some form, by injected humour,</p>
+                        <div class="name">Shirley Smith</div>
+                        <div class="designation">Director</div>
+                    </div><!-- /.testimonials-four-card__content -->
+                    <div class="image">
+                        <img src="images/resource/author-3.jpg" alt="">
+                    </div>
+                </div><!-- /.testimonials-four-card -->
+            </div>
+
+        </div><!-- /.row -->
+    </div><!-- /.auto-container -->
+</section> {% endcomment %}
+
+<section class="video-seven">
+    {% for rs in video %}
+    <div class="video-seven__parallax  jarallax" data-jarallax data-speed="0.3" data-imgPosition="50% 80%">
+        <img src="{{ rs.image.url }}" width="1894px" height="1269px" class="jarallax-img" alt="{{ rs.alt }}">
+    </div>
+    <div class="auto-container">
+        <h3 class="video-seven__title">{{ rs.title }}</h3><!-- /.video-seven__title -->
+        <a href="{{ rs.video_link }}" class="video-seven__btn lightbox-image">
+            <i class="fa fa-play"></i>
+            <i class="ripple"></i></a><!-- /.video-btn lightbox-image -->
+    </div><!-- /.auto-container -->
+    {% endfor %}
+</section><!-- /.video-seven -->
+
+<!-- Gallery Section -->
+<section class="gallery-section-two">
+    <div class="auto-container">
+        <div class="sec-title centered">
+            <h2>some of the Products we sell<span class="dot">.</span></h2>
+        </div>
+    </div>
+    <!--Porfolio Tabs-->
+    <div class="project-tab">
+        <div class="auto-container">
+        </div>
+        <!--Tabs Content-->
+        <div class="p-tabs-content">
+            <!--Portfolio Tab / Active Tab-->
+            <div class="p-tab active-tab" id="p-tab-1">
+                <div class="project-carousel owl-theme owl-carousel">
+
+                    <!-- Gallery Item -->
+                    {% for rs in product_category %}
+                    <div class="gallery-item">
+                        <div class="inner-box">
+                            <figure class="image"><img src="{{ rs.image.url }}" width="470px" height="426px" alt="{{ rs.alt }}"></figure>
+                            <a href="{{ rs.image.url }}" class="lightbox-image overlay-box"
+                                data-fancybox="gallery"></a>
+                            <div class="cap-box">
+                                <div class="cap-inner">
+                                    <!-- <div class="cat"><span>Graphic</span></div> -->
+                                    <div class="title">
+                                        <h5><a href="{{ rs.get_absolute_url }}">{{ rs.title }}</a></h5>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    {% endfor %}
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</section>
+
+<!-- call to action -->
+<section class="call-to-section-three jarallax" data-jarallax data-speed="0.3" data-imgPosition="50% 80%">
+    <img src="{% static 'images/update-1-12-2020/background/call-bg-1-1.jpg' %}" class="jarallax-img" alt="">
+    <div class="auto-container">
+        <h3>LET'S GET YOUR PROJECT
+            STARTED!</h3>
+        <div class="button-wrap">
+            <a href="{% url 'contact' %}" class="theme-btn btn-style-three">Book A Free Call</a>
+            <!-- /.theme-btn button-style-three -->
+        </div><!-- /.button-wrap -->
+    </div><!-- /.auto-container -->
+</section><!-- /.call-to-section-three -->
+
+<!--Sponsors Section-->
+<section class="sponsors-section sponsors-eight">
+    <div class="sponsors-outer">
+        <div class="auto-container">
+            <div class="sponsors-carousel owl-carousel owl-theme">
+                {% for rs in customer %}
+                <div class="slide-item">
+                    <figure class="image-box"><a href="{{ rs.link }}"><img src="{{ rs.image.url }}" width="150" height="80" alt="{{ rs.alt }}"></a></figure>
+                </div>
+                {% endfor %}
+            </div><!-- /.sponsors-carousel -->
+        </div><!-- /.auto-container -->
+    </div><!-- /.sponsors-outer -->
+</section><!-- /.sponsors-section -->
+
+
+
+{% comment %} <section class="blog-seven">
+    <div class="auto-container">
+        <div class="sec-title-seven text-center">
+            <h2 class="sec-title-seven__title">
+                Latest News & <span>Articles</span><br>
+                from the Blog
+            </h2><!-- /.sec-title-seven__title -->
+        </div><!-- /.sec-title-seven -->
+        <div class="row">
+            <div class="col-md-12 col-lg-4">
+                <div class="blog-seven__item">
+                    <div class="blog-seven__image">
+                        <img src="images/update-01-10-2021/blog/blog-2-1.jpg" alt="">
+                    </div><!-- /.blog-seven__image -->
+                    <div class="blog-seven__content">
+                        <div class="blog-seven__date">20 Aug, 2021</div><!-- /.blog-seven__date -->
+                        <div class="blog-seven__meta">
+                            <a href="#"><i class="far fa-user-circle"></i>by Admin</a>
+                            <a href="#"><i class="far fa-comments"></i>2 Comments</a>
+                        </div><!-- /.blog-seven__meta -->
+                        <h3 class="blog-seven__title">
+                            <a href="blog-single.html">They’re creating a profit
+                                through the predictive
+                                businesses</a>
+                        </h3>
+                    </div><!-- /.blog-seven__content -->
+                </div><!-- /.blog-seven__item -->
+            </div><!-- /.col-md-12 col-lg-4 -->
+            <div class="col-md-12 col-lg-4">
+                <div class="blog-seven__item">
+                    <div class="blog-seven__image">
+                        <img src="images/update-01-10-2021/blog/blog-2-2.jpg" alt="">
+                    </div><!-- /.blog-seven__image -->
+                    <div class="blog-seven__content">
+                        <div class="blog-seven__date">20 Aug, 2021</div><!-- /.blog-seven__date -->
+                        <div class="blog-seven__meta">
+                            <a href="#"><i class="far fa-user-circle"></i>by Admin</a>
+                            <a href="#"><i class="far fa-comments"></i>2 Comments</a>
+                        </div><!-- /.blog-seven__meta -->
+                        <h3 class="blog-seven__title">
+                            <a href="blog-single.html">Bring to the table win-win survival strategies to ensure
+                                proactive</a>
+                        </h3>
+                    </div><!-- /.blog-seven__content -->
+                </div><!-- /.blog-seven__item -->
+            </div><!-- /.col-md-12 col-lg-4 -->
+            <div class="col-md-12 col-lg-4">
+                <div class="blog-seven__item">
+                    <div class="blog-seven__image">
+                        <img src="images/update-01-10-2021/blog/blog-2-3.jpg" alt="">
+                    </div><!-- /.blog-seven__image -->
+                    <div class="blog-seven__content">
+                        <div class="blog-seven__date">20 Aug, 2021</div><!-- /.blog-seven__date -->
+                        <div class="blog-seven__meta">
+                            <a href="#"><i class="far fa-user-circle"></i>by Admin</a>
+                            <a href="#"><i class="far fa-comments"></i>2 Comments</a>
+                        </div><!-- /.blog-seven__meta -->
+                        <h3 class="blog-seven__title">
+                            <a href="blog-single.html"> Override the digital divide with additional
+                                clickthroughs</a>
+                        </h3>
+                    </div><!-- /.blog-seven__content -->
+                </div><!-- /.blog-seven__item -->
+            </div><!-- /.col-md-12 col-lg-4 -->
+        </div><!-- /.row -->
+    </div><!-- /.auto-container -->
+</section><!-- /.blog-seven --> {% endcomment %}
+
+{% endblock %}

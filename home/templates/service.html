@@ -1,0 +1,84 @@
+{% extends 'base.html' %}
+
+<!-- HTML Meta Tags -->
+{% block head %}
+
+<title>{% block title %} Service {% endblock %} | Synkisol</title>
+<meta name="description" content="One-stop hospitality solutions services for highly ambitious commercial kitchens. The best and most reliable hospitality solutions provider.">
+<meta name="keywords" content="Kitchen Suppliers in Kenya, Commercial Kitchen in Kenya, Stainless Steel Fabrication in Kenya, Commercial Kitchen Equipment for sale in Nairobi or around you" />
+
+<!-- Facebook Meta Tags -->
+<meta property="og:url" content="https://www.synkisol.co.ke/">
+<meta property="og:type" content="website">
+<meta property="og:title" content="{% block og:title %} Service {% endblock %} | Synkisol">
+<meta property="og:description" content="One-stop hospitality solutions services for highly ambitious commercial kitchens. The best and most reliable hospitality solutions provider.">
+<meta property="og:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+<!-- Twitter Meta Tags -->
+<meta name="twitter:card" content="summary_large_image">
+<meta property="twitter:domain" content="synkisol.co.ke">
+<meta property="twitter:url" content="https://www.synkisol.co.ke/">
+<meta name="twitter:title" content="{% block twitter:title %} Service {% endblock %} | Synkisol">
+<meta name="twitter:description" content="One-stop hospitality solutions services for highly ambitious commercial kitchens. The best and most reliable hospitality solutions provider.">
+<meta name="twitter:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+<link rel="canonical" href="{{request.build_absolute_uri}}">
+
+{% endblock %}
+
+{% block content %}
+
+{% load static %}
+
+<!-- Banner Section -->
+<section class="page-banner">
+    <div class="image-layer" style="background-image:url({% static 'images/background/image-7.jpg' %});"></div>
+    <div class="shape-1"></div>
+    <div class="shape-2"></div>
+    <div class="banner-inner">
+        <div class="auto-container">
+            <div class="inner-container clearfix">
+                <h1>Services</h1>
+                <div class="page-nav">
+                    <ul class="bread-crumb clearfix">
+                        <li><a href="{% url 'home:home' %}">Home</a></li>
+                        <li class="active">Services</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!--End Banner Section -->
+
+<section class="service-nine">
+    <div class="auto-container">
+        <div class="row">
+            {% for rs in services %}
+            <div class="col-md-6 col-lg-4">
+                <div class="service-nine__card">
+                    <div class="service-nine__card__inner">
+                        <div class="service-nine__image">
+                            <img src="{{ rs.short_image.url }}" width="370px" height="295px" alt="{{ rs.short_alt }}">
+                        </div><!-- /.service-nine__image -->
+                        <div class="service-nine__content">
+                            <!-- <div class="service-nine__icon">
+                                <i class="flaticon-responsive"></i>
+                            </div>/.service-nine__icon -->
+                            <h3 class="service-nine__title">
+                                <a href="{{ rs.get_absolute_url }}">{{ rs.title }}</a>
+                            </h3><!-- /.service-nine__title -->
+                            <p class="service-nine__text">{{ rs.short_detail }}</p><!-- /.service-nine__text -->
+                            <a href="{{ rs.get_absolute_url }}" class="service-nine__link"><i
+                                    class="fa fa-angle-right"></i></a>
+                        </div><!-- /.service-nine__content -->
+                    </div><!-- /.service-nine__card__inner -->
+                </div><!-- /.service-nine__card -->
+            </div><!-- /.col-md-6 col-lg-4 -->
+            {% endfor %}
+
+        </div><!-- /.row -->
+    </div><!-- /.auto-container -->
+</section><!-- /.service-nine -->
+
+{% endblock %}

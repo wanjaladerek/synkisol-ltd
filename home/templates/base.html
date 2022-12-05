@@ -1,0 +1,173 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="utf-8">
+	<!-- Stylesheets -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link
+		href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&family=Teko:wght@300;400;500;600;700&family=Shadows+Into+Light&display=swap"
+		rel="stylesheet">
+
+	{% load compress %}
+
+	{% compress css %}
+	<!-- reey font -->
+	<link rel="stylesheet" href="{% static 'css/reey-font.css' %}">
+	<link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/fontawesome-all.css' %}" rel="stylesheet">
+	<link href="{% static 'css/owl.css' %}" rel="stylesheet">
+	<link href="{% static 'css/flaticon.css' %}" rel="stylesheet">
+	<link href="{% static 'css/linoor-icons-2.css' %}" rel="stylesheet">
+	<link href="{% static 'css/animate.css' %}" rel="stylesheet">
+	<link href="{% static 'css/jquery-ui.css' %}" rel="stylesheet">
+	<link href="{% static 'css/jquery.fancybox.min.css' %}" rel="stylesheet">
+	<link href="{% static 'css/hover.css' %}" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/jarallax.css' %}">
+	<link rel="stylesheet" href="{% static 'css/swiper.min.css' %}">
+	<link href="{% static 'css/custom-animate.css' %}" rel="stylesheet">
+	<link href="{% static 'css/style.css' %}" rel="stylesheet">
+	<!-- rtl css -->
+	<link href="{% static 'css/rtl.css' %}" rel="stylesheet">
+	<!-- Responsive File -->
+	<link href="{% static 'css/responsive.css' %}" rel="stylesheet">
+
+	<!-- variable update -->
+	<link rel="stylesheet" href="{% static 'css/variables/index-8.css' %}">
+
+	<!-- Color css -->
+	<link rel="stylesheet" id="jssDefault" href="{% static 'css/colors/color-12.css' %}">
+	{% endcompress %}
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" href="{% static 'images/favicon.ico' %}" type="image/x-icon" />
+	<link rel="apple-touch-icon" href="{% static 'images/apple-touch-icon.png' %}" />
+	<link rel="apple-touch-icon" sizes="57x57" href="{% static 'images/apple-touch-icon-57x57.png' %}" />
+	<link rel="apple-touch-icon" sizes="72x72" href="{% static 'images/apple-touch-icon-72x72.png' %}" />
+	<link rel="apple-touch-icon" sizes="76x76" href="{% static 'images/apple-touch-icon-76x76.png' %}" />
+	<link rel="apple-touch-icon" sizes="114x114" href="{% static 'images/apple-touch-icon-114x114.png' %}" />
+	<link rel="apple-touch-icon" sizes="120x120" href="{% static 'images/apple-touch-icon-120x120.png' %}" />
+	<link rel="apple-touch-icon" sizes="144x144" href="{% static 'images/apple-touch-icon-144x144.png' %}" />
+	<link rel="apple-touch-icon" sizes="152x152" href="{% static 'images/apple-touch-icon-152x152.png' %}" />
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'images/apple-touch-icon-180x180.png' %}" />
+
+	<!-- Responsive Settings -->
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+	<!--[if lt IE 9]><script src="https://cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv.js"></script><![endif]-->
+	<!--[if lt IE 9]><script src="js/respond.js"></script><![endif]-->
+	
+	<!-- HTML Meta Tags -->
+	{% block head %}
+
+	<title>{% block title %} {% endblock %} | Nairobi Commercial Kitchen Equipment</title>
+	<meta name="description" content="Commercial Kitchen Equipment, Restaurant Kitchen Layouts, Stainless Steel Fabrication in Kenya. Commercial Kitchen Equipment for sale in Nairobi or around you">
+	<meta name="keywords" content="Kitchen Suppliers in Kenya, Commercial Kitchen in Kenya, Stainless Steel Fabrication in Kenya, Commercial Kitchen Equipment for sale in Nairobi or around you" />
+
+	<!-- Facebook Meta Tags -->
+	<meta property="og:url" content="https://www.synkisol.co.ke/">
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="{% block og:title %} {% endblock %} - Nairobi Commercial Kitchen Equipment">
+	<meta property="og:description" content="Commercial Kitchen Equipment, Restaurant Kitchen Layouts, Stainless Steel Fabrication in Kenya. Commercial Kitchen Equipment for sale in Nairobi or around you">
+	<meta property="og:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:card" content="summary_large_image">
+	<meta property="twitter:domain" content="synkisol.co.ke">
+	<meta property="twitter:url" content="https://www.synkisol.co.ke/">
+	<meta name="twitter:title" content="{% block twitter:title %} {% endblock %} - Nairobi Commercial Kitchen Equipment">
+	<meta name="twitter:description" content="Commercial Kitchen Equipment, Restaurant Kitchen Layouts, Stainless Steel Fabrication in Kenya. Commercial Kitchen Equipment for sale in Nairobi or around you">
+	<meta name="twitter:image" content="https://www.synkisol.co.ke/static/images/synkisol_logo.png">
+
+	<link rel="canonical" href="{{request.path}}">
+
+	{% endblock %}
+
+	
+	{% include 'structured_data.html' %}
+
+</head>
+
+<body>
+
+	<div class="page-wrapper">
+
+		<!-- style switcher -->
+		<div class="style-switcher">
+			<a href="#" id="switcher-toggler"><i class="fa fa-cog"></i></a>
+			<div class="language-feature">
+				<button class="ltr-switcher" data-href="#googtrans(en|en)">LTR</button><!-- /.ltr-switcher -->
+				<button class="rtl-switcher" data-href="#googtrans(en|ar)">RTL</button><!-- /.rtl-switcher -->
+			</div><!-- /.language-feature -->
+			<div class="layout-feature">
+				<a href="#" class="dark-switcher">Dark</a>
+				<button class="boxed-switcher">Boxed</button><!-- /.ltr-switcher -->
+			</div><!-- /.language-feature -->
+		</div>
+		<!-- Preloader -->
+		<div class="preloader">
+			<div class="icon" style="background-image: url({% static 'images/update-01-10-2021/synkisol-emblem.png' %});"></div>
+		</div>
+
+
+		{% include 'navbar.html' %}
+
+
+		{% block content %}
+        
+        {% endblock %}
+
+
+        {% include 'footer.html' %}
+
+
+	</div>
+	<!--End pagewrapper-->
+
+	<a href="#" data-target="html" class="scroll-to-target scroll-to-top"><i class="fa fa-angle-up"></i></a>
+
+
+	{% compress js %}
+	<script src="{% static 'js/jquery.js' %}"></script>
+	<script src="{% static 'js/popper.min.js' %}"></script>
+	<script src="{% static 'js/bootstrap.min.js' %}"></script>
+	<script src="{% static 'js/TweenMax.js' %}"></script>
+	<script src="{% static 'js/jquery-ui.js' %}"></script>
+	<script src="{% static 'js/jquery.fancybox.js' %}"></script>
+	<script src="{% static 'js/owl.js' %}"></script>
+	<script src="{% static 'js/mixitup.js' %}"></script>
+	<script src="{% static 'js/appear.js' %}"></script>
+	<script src="{% static 'js/wow.js' %}"></script>
+	<script src="{% static 'js/jQuery.style.switcher.min.js' %}"></script>
+	{% comment %} <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/js-cookie/2.1.2/js.cookie.min.js"> {% endcomment %}
+	</script>
+	<script src="{% static 'js/jquery.easing.min.js' %}"></script>
+	<script src="{% static 'js/jarallax.min.js' %}"></script>
+	<script src="{% static 'js/swiper.min.js' %}"></script>
+	<script src="{% static 'js/custom-script.js' %}"></script>
+
+	<script src="{% static 'js/lang.js' %}"></script>
+	{% comment %} <script src="https://translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script> {% endcomment %}
+	<script src="{% static 'js/color-switcher.js' %}"></script>
+	<script src="{% static 'js/jquery.waypoints.min.js' %}"></script>
+	<script src="{% static 'js/infinite.js' %}"></script>
+	<script>
+		var infinite = new Waypoint.Infinte({
+			element: $('.infinte-container')[0],
+
+			offset: 'botttom-in-view',
+
+			onBeforePageLoad: function () {
+
+			},
+			onAfterPageLoad: function () {
+				
+			}
+		});
+	</script>
+
+	{% endcompress %}
+</body>
+
+</html>

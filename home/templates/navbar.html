@@ -1,0 +1,129 @@
+{% load static %}
+
+<!--Mobile Menu-->
+<div class="side-menu__block">
+
+
+    <div class="side-menu__block-overlay custom-cursor__overlay">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    </div><!-- /.side-menu__block-overlay -->
+    <div class="side-menu__block-inner ">
+        <div class="side-menu__top justify-content-end">
+
+            <a href="#" class="side-menu__toggler side-menu__close-btn"><img src="{% static 'images/icons/close-1-1.png' %}"
+                    alt="Close Button"></a>
+        </div><!-- /.side-menu__top -->
+
+
+        <nav class="mobile-nav__container">
+            <!-- content is loading via js -->
+        </nav>
+        <div class="side-menu__sep"></div><!-- /.side-menu__sep -->
+        <div class="side-menu__content">
+            <p>Synkisol Limited, your one-stop hospitality solutions provider, offers stainless steel products, coffee machines, & more.</p>
+            <p><a href="mailto:info@synkisol.co.ke">info@synkisol.co.ke</a> <br> <a href="tel:+254718258028">+254 718 258 028</a></p>
+            <div class="side-menu__social">
+                <a href="https://www.twitter.com/synkisol" target="_blank" class="fab fa-twitter"></a>
+                <a href="https://www.facebook.com/synkiol" target="_blank" class="fab fa-facebook"></a>
+                <a href="https://www.linkedini.com/synkisol" target="_blank" class="fab fa-linkedin"></a>
+                <a href="https://www.instagram.com/synkisol" target="_blank" class="fab fa-instagram"></a>
+            </div>
+        </div><!-- /.side-menu__content -->
+    </div><!-- /.side-menu__block-inner -->
+</div><!-- /.side-menu__block -->
+
+<!--Search Popup-->
+<!-- <div class="search-popup">
+    <div class="search-popup__overlay custom-cursor__overlay">
+        <div class="cursor"></div>
+        <div class="cursor-follower"></div>
+    </div>
+    <div class="search-popup__inner">
+        <form action="#" class="search-popup__form">
+            <input type="text" name="search" placeholder="Type here to Search....">
+            <button type="submit"><i class="fa fa-search"></i></button>
+        </form>
+    </div>
+</div> -->
+
+
+<header class="header-eight">
+    <div class="header-eight__topbar">
+        <div class="auto-container">
+            <ul class="header-eight__topbar__info">
+                <li>
+                    <i class="flaticon-email-2"></i>
+                    <a href="mailto:info@synkisol.co.ke">info@synkisol.co.ke</a>
+                </li>
+                <li>
+                    <i class="flaticon-pin-1"></i>
+                    Shem Plaza, Next To D.T Dobie, Lusaka Road, Nairobi, Kenya
+                </li>
+            </ul><!-- /.header-eight__info -->
+            <div class="header-eight__topbar__right">
+                <p>Welcome to Synkisol Limited.</p>
+                <div class="header-eight__topbar__social">
+                    <a href="https://www.twitter.com/synkisol" target="_blank" class="fab fa-twitter"></a>
+                    <a href="https://www.facebook.com/synkiol" target="_blank" class="fab fa-facebook"></a>
+                    <a href="https://www.linkedini.com/synkisol" target="_blank" class="fab fa-linkedin"></a>
+                    <a href="https://www.instagram.com/synkisol" target="_blank" class="fab fa-instagram"></a>
+                </div><!-- /.header-eight__social -->
+            </div><!-- /.header-eight__right -->
+        </div><!-- /.auto-container -->
+    </div><!-- /.header-eight__topbar -->
+
+    <nav class="mainmenu-eight main-header">
+        <div class="auto-container">
+            <div class="nav-outer mainmenu-eight__inner ">
+                <div class="mainmenu-eight__left">
+                    <a href="{% url 'home:home' %}">
+                        <img src="{% static 'images/update-01-10-2021/synkisol-logo.png' %}" height="50px" width="250px"
+                            alt="Synkisol Limited | Nairobi Commercial Kitchen Equipments ">
+                    </a>
+                    <div class="mobile-nav-toggler"><span class="icon flaticon-menu-2"></span><span
+                            class="txt">Menu</span></div>
+
+                </div><!-- /.mainmenu-eight__left -->
+                <nav class="main-menu navbar-expand-md navbar-light">
+                    <div class="collapse navbar-collapse show clearfix" id="navbarSupportedContent">
+                        <ul class="navigation clearfix">
+                            <li><a href="{% url 'home:home' %}">Home</a></li>
+                            <li><a href="{% url 'about' %}">About</a></li>
+                            <li><a href="{% url 'service' %}">Service</a></li>
+                            <li class="dropdown"><a href="{% url 'all_projects' %}">Project</a>
+                                <ul>
+                                    {% for rs in proj_categories %}
+                                    <li {% if proj_category.slug == rs.slug %} class="selected" {% endif %}><a href="{{ rs.get_absolute_url }}">{{ rs.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li class="dropdown"><a href="{% url 'all_products' %}">Product</a>
+                                <ul>
+                                    {% for rs in prod_categories %}
+                                    <li {% if prod_category.slug == rs.slug %} class="selected" {% endif %}><a href="{{ rs.get_absolute_url }}">{{ rs.title }}</a></li>
+                                    {% endfor %}
+                                </ul>
+                            </li>
+                            <li><a href="{% url 'contact' %}">Contact</a></li>
+                        </ul>
+                    </div>
+                </nav>
+
+                <div class="mainmenu-eight__right">
+
+                    <a href="tel:+254718258028" class="mainmenu-eight__call">
+                        <span class="mainmenu-eight__call__icon">
+                            <i class="flaticon-phone"></i>
+                        </span><!-- /.mainmenu-eight__call__icon -->
+                        <span class="mainmenu-eight__call__text">
+                            Have any questions? <br>
+                            Free: <strong>+254 718 258 028</strong>
+                        </span><!-- /.mainmenu-eight__call__text -->
+                    </a>
+
+                </div><!-- /.mainmenu-eight__right -->
+            </div><!-- /.mainmenu-eight__inner -->
+        </div><!-- /.auto-container -->
+    </nav><!-- /.mainmenu-eight -->
+</header><!-- /.header-eight -->

@@ -1,0 +1,88 @@
+{% load static %}
+
+<!-- Main Footer -->
+<footer class="main-footer__three">
+    <div class="auto-container">
+        <div class="row">
+            {% for rs in about %}
+            <div class="col-md-6 col-lg-4">
+                <div class="footer-widget">
+                    <h3>About</h3>
+                    <p>{{ rs.short_detail }}
+                    </p>
+                    <a href="{% url 'contact' %}" class="theme-btn btn-style-three">Let's Get Started</a><!-- /.theme-btn -->
+                </div><!-- /.footer-widget -->
+            </div><!-- /.col-md-6 col-lg-3 -->
+            {% endfor %}
+            <div class="col-md-6 col-lg-4">
+                <div class="footer-widget">
+                    <h3>Explore</h3>
+                    <ul class="list-unstyled footer-widget__links">
+                        <li><a href="{% url 'about' %}">About</a></li>
+                        <li><a href="#">Support</a></li>
+                        <li><a href="#">Meet Our Team</a></li>
+                        <li><a href="#">Privacy Policy</a></li>
+                        <li><a href="{% url 'all_projects' %}">Our Projects</a></li>
+                        <li><a href="#">Terms of Use</a></li>
+                        <li><a href="#">Latest News</a></li>
+                        <li><a href="#">Help</a></li>
+                        <li><a href="{% url 'contact' %}">Contact</a></li>
+                    </ul><!-- /.list-unstyled -->
+                </div><!-- /.footer-widget -->
+            </div><!-- /.col-md-6 col-lg-3 -->
+            {% comment %} <div class="col-md-6 col-lg-3">
+                <div class="footer-widget">
+                    <h3>News</h3>
+                    <ul class="post-list">
+                        <li>
+                            <img src="images/update-1-12-2020/resources/footer-1-1.png" width="68" height="70"
+                                alt="">
+                            <div class="content">
+                                <p>20 Nov, 2020</p>
+                                <h4><a href="blog-single.html">The best digital services for the startups</a>
+                                </h4>
+                            </div><!-- /.content -->
+                        </li>
+                        <li>
+                            <img src="images/update-1-12-2020/resources/footer-1-2.png" width="68" height="70"
+                                alt="">
+                            <div class="content">
+                                <p>20 Nov, 2020</p>
+                                <h4><a href="blog-single.html">The best digital services for the startups</a>
+                                </h4>
+                            </div><!-- /.content -->
+                        </li>
+                    </ul><!-- /.post-list -->
+                </div><!-- /.footer-widget -->
+            </div><!-- /.col-md-6 col-lg-3 --> {% endcomment %}
+            <div class="col-md-6 col-lg-4">
+                <div class="footer-widget">
+                    <h3>Contact</h3>
+                    <ul class="list-unstyled contact-list">
+                        <li><span class="icon flaticon-call"></span><a href="tel:+254718258028">+254 718 258 028</a></li>
+                        <li><span class="icon flaticon-email-2"></span><a
+                                href="mailto:info@synkisol.co.ke">info@synkisol.co.ke</a></li>
+                        <li class="address"><span class="icon flaticon-pin-1"></span> Shem Plaza, Next To D.T Dobie, Lusaka Road, Nairobi, Kenya</li>
+                    </ul><!-- /.list-unstyled -->
+                </div><!-- /.footer-widget -->
+            </div><!-- /.col-md-6 col-lg-3 -->
+        </div><!-- /.row -->
+    </div><!-- /.auto-container -->
+    <div class="bottom-footer">
+        <div class="auto-container">
+            <div class="left-content">
+                <a href="{% url 'home:home' %}">
+                    <img src="{% static 'images/update-01-10-2021/synkisol-logo.png' %}" width="180" height="50" alt="Synkisol Synergy Solutions Logo">
+                </a>
+                <p>&copy; 2022 Synkisol Synergy Solutions, All Rights Reserved. Developed by <a
+                    href="https://codeworldcreatives.com" target="_blank">Code World Creatives</p>
+            </div><!-- /.left-content -->
+            <ul class="list-unstyled social-links">
+                <li><a href="https://www.facebook.com/synkisol" target="_blank"><span class="fab fa-facebook-square"></span></a></li>
+                <li><a href="https://www.twitter.com/synkisol" target="_blank"><span class="fab fa-twitter"></span></a></li>
+                <li><a href="https://www.instagram.com/synkisol" target="_blank"><span class="fab fa-instagram"></span></a></li>
+                <li><a href="https://www.linkedin.com/synkisol" target="_blank"><span class="fab fa-linkedin"></span></a></li>
+            </ul><!-- /.social-links -->
+        </div><!-- /.auto-container -->
+    </div><!-- /.bottom-footer -->
+</footer><!-- /.main-footer__three -->
